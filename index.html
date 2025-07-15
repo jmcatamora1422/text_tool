@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+textarea{
+  width:97%;
+  resize: none;
+  outline: none;
+  padding: 10px;
+  font-size: clamp(0.8125rem, 0.7855rem + 0.1351vw, 0.9375rem);
+}
+button{
+  background: green;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<textarea rows="15"></textarea>
+<button>Remove Spaces</button>
+<script>
+function toSingleLineParagraph(txt) {
+  let cleaned = txt
+    .replace(/\s+/g, ' ')   
+    .trim();             
+  return cleaned;
+}
+
+document.querySelector("button").addEventListener("click", function(){
+  let singleParagraph = toSingleLineParagraph(document.querySelector("textarea").value);
+  document.querySelector("textarea").value = singleParagraph;
+});
+</script>
+</body>
+</html> 
