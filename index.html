@@ -22,8 +22,9 @@ button{
 </style>
 </head>
 <body>
-<textarea rows="15"></textarea>
+<textarea class="text" rows="15"></textarea>
 <button>Remove Spaces</button>
+<textarea class="text2" rows="15" style="margin-top: 50px"></textarea>
 <script>
 function toSingleLineParagraph(txt) {
   let cleaned = txt
@@ -33,8 +34,9 @@ function toSingleLineParagraph(txt) {
 }
 
 document.querySelector("button").addEventListener("click", function(){
-  let singleParagraph = toSingleLineParagraph(document.querySelector("textarea").value);
-  document.querySelector("textarea").value = singleParagraph;
+  let singleParagraph = toSingleLineParagraph(document.querySelector("textarea.text").value);
+  document.querySelector("textarea.text").value = singleParagraph;
+  document.querySelector("textarea.text2").value = singleParagraph + "\n\ngenerate images as i narrate this story, make it realistic";
 });
 </script>
 </body>
