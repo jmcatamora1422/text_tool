@@ -28,8 +28,9 @@ button{
 <script>
 function toSingleLineParagraph(txt) {
   let cleaned = txt
-    .replace(/\s+/g, ' ')   
-    .trim();             
+    .replace(/\s+/g, ' ')                            // collapse all whitespace
+    .replace(/(\S)\.(?!\.)/g, '$1 .')                // add space before single period only
+    .trim();
   return cleaned;
 }
 
